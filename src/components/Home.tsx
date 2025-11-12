@@ -1,9 +1,10 @@
 import { Button } from "@mui/material";
 import "../assets/awsbtn.css";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="h-full w-full overflow-auto flex flex-col items-center justify-center grow bg-gray-100">
       <h2 className="text-3xl flex mx-10 mt-10 mb-5 font-semibold text-gray-800">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
         dignissim, nisi quis pulvinar ullamcorper, nunc nisi aliquam enim, ut
@@ -14,15 +15,11 @@ export const Home = () => {
         egestas lorem. Ut tincidunt odio vitae facilisis accumsan. Donec
         dignissim scelerisque nisl eu consequat.{" "}
       </h2>
-      <Button
-        variant="contained"
-        color="error"
-        href="/todo"
-        size="large"
-        className=""
-      >
-        TO DO List
-      </Button>
+      <Link to="/todo">
+        <Button variant="contained" color="error" size="large" className="">
+          TO DO List
+        </Button>
+      </Link>
     </div>
   );
 };
