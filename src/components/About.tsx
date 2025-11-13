@@ -1,6 +1,6 @@
 export const AboutPage = () => {
   return (
-    <div className="h-full w-full overflow-auto bg-gray-50 px-4 py-8 sm:px-6 lg:px-8">
+    <div className="h-full w-full overflow-auto bg-gray-200 px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-2xl mb-10 space-y-6">
         <h1 className="text-3xl font-bold text-center text-purple-700">
           About This To-Do List App

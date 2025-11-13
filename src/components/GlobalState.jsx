@@ -2,6 +2,7 @@ import React, { useEffect, useCallback, useState } from "react";
 
 const initialGlobalState = {
   todos: [],
+  init: true
 };
 
 // Create a Context for the (global) State

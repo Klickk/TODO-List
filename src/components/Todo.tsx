@@ -6,8 +6,7 @@ import { Button } from "@mui/material";
 
 export const ToDoPage = () => {
   const { todo } = useGlobalState();
-
-  const [init, setInit] = useState<boolean>(true);
+  const { init } = useGlobalState();
 
   const [todos, setTodos] = useState<Todo[]>(todo || []);
 
@@ -18,22 +17,20 @@ export const ToDoPage = () => {
       text,
       completed: false,
     };
-    GlobalState.set({ todo: [...todos, newTodo] });
-    console.log(todo);
+    GlobalState.set({ todo: [...todos, newTodo], init: false });
     setTodos([...todos, newTodo]);
   };
 
   useEffect(() => {
     if (init && todos.length === 0) {
       addTodo("Build a to-do app");
-      setInit(false);
     }
   }, []);
 
   const deleteTodo = (id: number) => {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
-    GlobalState.set({ todo: updatedTodos });
+    GlobalState.set({ todo: updatedTodos, init: false });
   };
 
   const editTodo = (id: number, newText: string) => {
@@ -41,7 +38,7 @@ export const ToDoPage = () => {
       todo.id === id ? { ...todo, text: newText } : todo
     );
     setTodos(updatedTodos);
-    GlobalState.set({ todo: updatedTodos });
+    GlobalState.set({ todo: updatedTodos, init: false });
   };
 
   const toggleItem = (id: number) => {
@@ -49,11 +46,11 @@ export const ToDoPage = () => {
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
     setTodos(updatedTodos);
-    GlobalState.set({ todo: updatedTodos });
+    GlobalState.set({ todo: updatedTodos, init: false });
   };
 
   return (
-    <div className="h-full w-full overflow-auto bg-gray-50 px-4 py-8 sm:px-6 lg:px-8">
+    <div className="h-full w-full overflow-auto bg-gray-200 px-4 py-8 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-2xl mb-10 space-y-6">
         <form
           className="flex flex-col sm:flex-row items-stretch gap-3 w-full max-w-2xl mx-auto"

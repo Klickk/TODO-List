@@ -1,10 +1,9 @@
 import { Button } from "@mui/material";
-import "../assets/awsbtn.css";
 import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
-    <div className="h-full w-full overflow-auto flex flex-col items-center justify-center grow bg-gray-100">
+    <div className="h-full w-full overflow-auto flex flex-col items-center justify-center bg-gray-200">
       <h2 className="text-3xl flex mx-10 mt-10 mb-5 font-semibold text-gray-800">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
         dignissim, nisi quis pulvinar ullamcorper, nunc nisi aliquam enim, ut
